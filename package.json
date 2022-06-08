@@ -18,10 +18,16 @@
   },
   "homepage": "https://github.com/leminhthanh0801/simple_blockchain#readme",
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "elliptic": "^6.5.4",
     "nodemon": "^2.0.16"
   },
   "browser": {
     "crypto": false
+  },
+  "paths": {
+    "crypto": [
+      "node_modules/crypto-js"
+    ]
   }
 }
