@@ -1,0 +1,24 @@
+{
+  "name": "simple_coin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/blockchain.js",
+  "scripts": {
+    "start": " node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leminhthanh0801/simple_blockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leminhthanh0801/simple_blockchain/issues"
+  },
+  "homepage": "https://github.com/leminhthanh0801/simple_blockchain#readme",
+  "dependencies": {
+    "elliptic": "^6.5.4",
+    "nodemon": "^2.0.16"
+  }
+}
