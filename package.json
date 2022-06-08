@@ -20,5 +20,8 @@
   "dependencies": {
     "elliptic": "^6.5.4",
     "nodemon": "^2.0.16"
+  },
+  "browser": {
+    "crypto": false
   }
 }
