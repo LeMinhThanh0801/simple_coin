@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Blockchain } from './blockchain';
-// import { Blockchain } from 'SavjeeCoin/src/blockchain';
 import * as EC from 'elliptic';
 
 @Injectable({

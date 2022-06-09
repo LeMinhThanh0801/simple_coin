@@ -141,7 +141,7 @@ class Block {
 }
 
 class Blockchain {
-  chain: Block[];
+  chain: Array<Block>;
   difficulty: number;
   miningReward: number;
   pendingTransactions: Array<Transaction>;
