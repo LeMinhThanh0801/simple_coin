@@ -7,7 +7,7 @@ import { BlockchainService } from '../../services/blockchain.service';
 })
 export class BlockchainViewerComponent implements OnInit {
   public blocks: Array<any> = [];
-  public selectedBlock = null;
+  public selectedBlock: any;
   constructor(blockchainService: BlockchainService) {
     this.blocks = blockchainService.blockchainInstance.chain;
     this.selectedBlock = this.blocks[0];

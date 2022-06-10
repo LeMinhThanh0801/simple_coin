@@ -1,4 +1,5 @@
 import * as crypto from 'crypto';
+const shajs = require('sha.js');
 import * as EC from 'elliptic';
 const ec = new EC.ec('secp256k1');
 
@@ -8,10 +9,10 @@ class Transaction {
   amount: number;
   timestamp: number;
   signature: any;
-  constructor(fromAddress: string, toAddress: string, amount: number) {
-    this.fromAddress = fromAddress;
-    this.toAddress = toAddress;
-    this.amount = amount;
+  constructor(fromAddress?: string, toAddress?: string, amount?: number) {
+    this.fromAddress = fromAddress || '';
+    this.toAddress = toAddress || '';
+    this.amount = amount || 0;
     this.timestamp = Date.now();
   }
 
@@ -21,10 +22,13 @@ class Transaction {
    * @returns {string}
    */
   calculateHash() {
-    return crypto
-      .createHash('sha256')
+    return shajs('sha256')
       .update(this.fromAddress + this.toAddress + this.amount + this.timestamp)
       .digest('hex');
+    // return crypto
+    //   .createHash('sha256')
+    //   .update(this.fromAddress + this.toAddress + this.amount + this.timestamp)
+    //   .digest('hex');
   }
 
   /**
@@ -95,8 +99,7 @@ class Block {
    * @returns {string}
    */
   calculateHash() {
-    return crypto
-      .createHash('sha256')
+    return shajs('sha256')
       .update(
         this.previousHash +
           this.timestamp +
@@ -104,6 +107,15 @@ class Block {
           this.nonce
       )
       .digest('hex');
+    // return crypto
+    //   .createHash('sha256')
+    //   .update(
+    //     this.previousHash +
+    //       this.timestamp +
+    //       JSON.stringify(this.transactions) +
+    //       this.nonce
+    //   )
+    //   .digest('hex');
   }
 
   /**
@@ -335,4 +347,4 @@ class Blockchain {
   }
 }
 
-export { Blockchain };
+export { Blockchain, Transaction };
