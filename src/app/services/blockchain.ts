@@ -1,4 +1,3 @@
-import * as crypto from 'crypto';
 const shajs = require('sha.js');
 import * as EC from 'elliptic';
 const ec = new EC.ec('secp256k1');
@@ -168,7 +167,7 @@ class Blockchain {
    * @returns {Block}
    */
   createGenesisBlock() {
-    return new Block(Date.parse('2017-01-01'), [], '0');
+    return new Block(Date.parse('2022-01-01'), [], '0');
   }
 
   /**
@@ -268,7 +267,7 @@ class Blockchain {
    * @returns {number} The balance of the wallet
    */
   getBalanceOfAddress(address: string) {
-    let balance = 0;
+    let balance = 100;
 
     for (const block of this.chain) {
       for (const trans of block.transactions) {
