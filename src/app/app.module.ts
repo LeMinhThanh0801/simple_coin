@@ -11,6 +11,8 @@ import { PendingTransactionsComponent } from './pages/pending-transactions/pendi
 import { WalletBalanceComponent } from './pages/wallet-balance/wallet-balance.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { FormsModule } from '@angular/forms';
+import { HistoryTransactionsComponent } from './pages/history-transactions/history-transactions.component';
+import { HistoryTableComponent } from './components/history-table/history-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,8 @@ import { FormsModule } from '@angular/forms';
     PendingTransactionsComponent,
     WalletBalanceComponent,
     TransactionsTableComponent,
+    HistoryTransactionsComponent,
+    HistoryTableComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [BlockchainService],

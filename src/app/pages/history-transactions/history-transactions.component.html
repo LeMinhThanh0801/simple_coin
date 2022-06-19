@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Transactions</h1>
+  <p *ngIf="transactions.length === 0">
+    This wallet has made no transactions (yet)
+  </p>
+  <app-history-table
+    [transactions]="transactions"
+    *ngIf="transactions.length > 0"
+  ></app-history-table>
+</div>
